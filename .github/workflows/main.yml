@@ -17,3 +17,4 @@ jobs:
           SECRET_NAME: kubeconfig
           TENANT_ID: ${{ secrets.TENANT_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
