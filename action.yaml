@@ -1,0 +1,32 @@
+name: 'Get AKS Kubeconfig'
+description: 'sets a kubeconfig secret on the repository'
+inputs:
+  APP_ID:  # id of input
+    description: 'Client ID for Service Principal'
+    required: true
+  APP_SECRET:  # id of input
+    description: 'Client Secret for Service Principal'
+    required: true
+  SUBSCRIPTION_ID:  # id of input
+    description: 'Subscription for Service Principal'
+    required: true
+  TENANT_ID:  # id of input
+    description: 'Tenant for Service Principal'
+    required: true
+  RESOURCE_GROUP_NAME:  # id of input
+    description: 'Resource Group for cluster'
+    required: true
+  CLUSTER_NAME:
+    description: 'Name for cluster'
+    required: true
+  SECRET_NAME:
+    description: 'Secret name for kube-config'
+    required: false
+    default: 'KUBECONFIG'
+runs:
+  using: "composite"
+  steps:
+    - run: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+      shell: bash
+    - run: ${{ github.action_path }}/getKubeConfig.sh
+      shell: bash
