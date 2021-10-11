@@ -36,5 +36,7 @@ runs:
         TENANT_ID: ${{ inputs.TENANT_ID }}
         RESOURCE_GROUP_NAME: ${{ inputs.RESOURCE_GROUP_NAME }}
         CLUSTER_NAME: ${{ inputs.CLUSTER_NAME }}
-        SECRET_NAME: ${{ inputs.SECRET_NAME }}
       shell: bash
+    - run: gh secret set ${{ inputs.SECRET_NAME }} < ~/.kube/config
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
