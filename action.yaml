@@ -29,4 +29,12 @@ runs:
     - run: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
       shell: bash
     - run: ${{ github.action_path }}/getKubeConfig.sh
+      env:
+        APP_ID: ${{ inputs.APP_ID }}
+        APP_SECRET: ${{ inputs.APP_SECRET }}
+        SUBSCRIPTION_ID: ${{ inputs.SUBSCRIPTION_ID }}
+        TENANT_ID: ${{ inputs.TENANT_ID }}
+        RESOURCE_GROUP_NAME: ${{ inputs.RESOURCE_GROUP_NAME }}
+        CLUSTER_NAME: ${{ inputs.CLUSTER_NAME }}
+        SECRET_NAME: ${{ inputs.SECRET_NAME }}
       shell: bash
