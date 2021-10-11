@@ -38,5 +38,5 @@ runs:
         CLUSTER_NAME: ${{ inputs.CLUSTER_NAME }}
       shell: bash
     - run: gh secret set ${{ inputs.SECRET_NAME }} < ~/.kube/config
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
