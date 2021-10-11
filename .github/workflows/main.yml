@@ -1,0 +1,18 @@
+on: [push]
+
+jobs:
+  AKSGetKubeConfig:
+    runs-on: ubuntu-latest
+    name: Gets And Stores a Kubeconfig
+    steps:
+      - uses: actions/checkout@v2
+      - id: foo
+        uses: imiller31/GetKubeconfigAKSAction@v1
+        with:
+          APP_ID: ${{ secrets.APP_ID }}
+          APP_SECRET: ${{ secrets.APP_SECRET }}
+          RESOURCE_GROUP_NAME: ${{ secrets.RESOURCE_GROUP_NAME }}
+          SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
+          CLUSTER_NAME: ${{ secrets.CLUSTER_NAME }}
+          SECRET_NAME: kubeconfig
+          TENANT_ID: ${{ secrets.TENANT_ID }}

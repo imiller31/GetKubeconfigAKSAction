@@ -1,19 +1,19 @@
 name: 'Get AKS Kubeconfig'
 description: 'sets a kubeconfig secret on the repository'
 inputs:
-  APP_ID:  # id of input
+  APP_ID:
     description: 'Client ID for Service Principal'
     required: true
-  APP_SECRET:  # id of input
+  APP_SECRET:
     description: 'Client Secret for Service Principal'
     required: true
-  SUBSCRIPTION_ID:  # id of input
+  SUBSCRIPTION_ID:
     description: 'Subscription for Service Principal'
     required: true
-  TENANT_ID:  # id of input
+  TENANT_ID:
     description: 'Tenant for Service Principal'
     required: true
-  RESOURCE_GROUP_NAME:  # id of input
+  RESOURCE_GROUP_NAME: 
     description: 'Resource Group for cluster'
     required: true
   CLUSTER_NAME:
