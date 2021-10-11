@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: foo
-        uses: imiller31/GetKubeconfigAKSAction@v1.3
+        uses: imiller31/GetKubeconfigAKSAction@v0.1
         with:
           APP_ID: ${{ secrets.APP_ID }}
           APP_SECRET: ${{ secrets.APP_SECRET }}
@@ -16,3 +16,4 @@ jobs:
           CLUSTER_NAME: ${{ secrets.CLUSTER_NAME }}
           SECRET_NAME: kubeconfig
           TENANT_ID: ${{ secrets.TENANT_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
