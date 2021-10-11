@@ -26,6 +26,9 @@ inputs:
   GITHUB_TOKEN:
     description: 'token for GITHUB AUTH'
     required: true
+  REPOSITORY:
+    description: 'repository name'
+    required: true
 runs:
   using: "composite"
   steps:
@@ -41,4 +44,5 @@ runs:
         CLUSTER_NAME: ${{ inputs.CLUSTER_NAME }}
         SECRET_NAME: ${{ inputs.SECRET_NAME }}
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
+        REPOSITORY: ${{ inputs.REPOSITORY }}
       shell: bash
