@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: foo
-        uses: imiller31/GetKubeconfigAKSAction@v1.1
+        uses: imiller31/GetKubeconfigAKSAction@v1.2
         with:
           APP_ID: ${{ secrets.APP_ID }}
           APP_SECRET: ${{ secrets.APP_SECRET }}
