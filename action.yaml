@@ -19,16 +19,6 @@ inputs:
   CLUSTER_NAME:
     description: 'Name for cluster'
     required: true
-  SECRET_NAME:
-    description: 'Secret name for kube-config'
-    required: false
-    default: 'KUBECONFIG'
-  GITHUB_TOKEN:
-    description: 'token for GITHUB AUTH'
-    required: true
-  REPOSITORY:
-    description: 'repository name'
-    required: true
 runs:
   using: "composite"
   steps:
@@ -42,7 +32,4 @@ runs:
         TENANT_ID: ${{ inputs.TENANT_ID }}
         RESOURCE_GROUP_NAME: ${{ inputs.RESOURCE_GROUP_NAME }}
         CLUSTER_NAME: ${{ inputs.CLUSTER_NAME }}
-        SECRET_NAME: ${{ inputs.SECRET_NAME }}
-        GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
-        REPOSITORY: ${{ inputs.REPOSITORY }}
       shell: bash
